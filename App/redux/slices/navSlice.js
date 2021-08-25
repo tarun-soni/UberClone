@@ -21,7 +21,7 @@ const navSlice = createSlice({
 // actions
 export const { setOrigin, setDestination } = navSlice.actions
 
-//selector
+// selector
 export const selectOrigin = state => state.nav.origin
 export const selectDestination = state => state.nav.destination
 
