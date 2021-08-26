@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import tw from 'tailwind-react-native-classnames'
+import { useNavigation } from '@react-navigation/native'
 import navOptionsData from '../data/navOptionsData'
 
 const styles = StyleSheet.create({
@@ -26,6 +27,8 @@ const styles = StyleSheet.create({
 })
 
 const NavOptions = () => {
+  const navigation = useNavigation()
+
   return (
     <View>
       <FlatList
@@ -33,7 +36,10 @@ const NavOptions = () => {
         horizontal
         renderItem={({ item }) => (
           <TouchableOpacity
-            style={[styles.nav_item_container, styles.nav_item_rounded]}>
+            style={[styles.nav_item_container, styles.nav_item_rounded]}
+            onPress={() => {
+              navigation.navigate(item.screen)
+            }}>
             <View>
               <Image style={styles.nav_image} source={{ uri: item.image }} />
               <Text style={styles.nav_item_title}>{item.title}</Text>

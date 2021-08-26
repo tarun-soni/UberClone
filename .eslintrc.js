@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   extends: ['handlebarlabs'],
   rules: {
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-closing-bracket-location': 0,
     'react/jsx-props-no-spreading': 0,
     'react/jsx-curly-new-line': 0,
